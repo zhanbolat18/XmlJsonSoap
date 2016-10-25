@@ -24,9 +24,13 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-			<!-- 1 slide-->
-				<section style="font-size: 3em"><b>HTTP</b></section>
-			<!-- 2 slide-->
+			<!-- 1 slide HTTP-->
+				<section style="font-size: 3em">
+					<b>
+						HTTP
+					</b>
+				</section>
+			<!-- 2 slide What is it-->
 				<section>
 					<p style="text-align: left; text-indent: 2em;">
 						<b>HTTP</b> (англ. HyperText Transfer Protocol — «протокол передачи гипертекста») — протокол прикладного уровня передачи данных. Основой HTTP является технология «клиент-сервер», то есть предполагается существование:
@@ -37,7 +41,7 @@
 						</ul>
 					</p>  	
 				</section>
-			<!-- 3 slide-->	
+			<!-- 3 slide Version-->	
 				<section>
 					<ul>
 						<h3>
@@ -52,10 +56,11 @@
 						</ul>
 					</ul>
 				</section>
-			<!-- 4 slide-->	
-				<section>
-					<h3>Структура HTTP</h3>
+			<!-- 4 slide Structure-->	
+				<section style="text-align:left;font-size: 0.8em">
+					<h3 style="text-align:center">Структура HTTP</h3>
 					<section>
+
 						<b>Каждое HTTP-сообщение состоит из трёх частей, которые передаются в указанном порядке.</b>
 						<br/>
 						<br/>
@@ -65,8 +70,9 @@
 							<li>Тело сообщения	</li>
 						</ul>
 					</section>
-					<section style="text-align: left">
-						<p style="text-indent: 2em;"> <b>Стартовая строка</b> (англ. Starting line) — определяет тип сообщения;</p>
+					<!--Стартовая строка -->
+					<section>
+						<p style="text-indent: 2em;"> <b>Стартовая строка</b> (англ. Starting line) — определяет тип сообщения. Заголовки и тело сообщения могут отсутствовать, но стартовая строка является обязательным элементом, так как указывает на тип запроса/ответа.</p>
 						<p>Cтартовые строки различаются для запроса и ответа:
 							<ul>
 								<li>
@@ -86,7 +92,8 @@
 							</ul>
 						</p>
 					</section>
-					<section style="text-align: left; text-indent: 2em;">
+					<!--Заголовки -->
+					<section style="text-align: left; text-indent: 2em; font-size: 0.8em">
 						<p>
 							<b>Заголовки</b> (англ. Headers) — характеризуют тело сообщения, параметры передачи и прочие сведения.
 						</p>
@@ -100,15 +107,149 @@
 							<p><b>Content-Language:</b> ru <br/>	</p>
 						</i>	
 					</section>
+					<!--Тело сообщения -->
+					<section style="text-align: left; text-indent: 2em;">
+						<div style="font-size: 0.8em">
+							<p>
+								<b>Тело сообщения</b> (англ. Message Body) — непосредственно данные сообщения. Обязательно должно отделяться от заголовков пустой строкой. <br>
+							</p>
+							<p>
+								Тело сообщения, если оно присутствует, используется для передачи тела объекта, связанного с запросом или ответом. Присутствие тела сообщения в запросе отмечается добавлением к заголовкам запроса поля заголовка <i>Content-Length</i> или <i>Transfer-Encoding</i>. Тело сообщения может быть добавлено в запрос, только когда метод запроса допускает тело объекта.
+							</p>
+						</div>	
+					</section>
+					<section style="text-align: left; font-size: 0.8em">
+						HTTP/1.x 301 Moved Permanently<br/>
+						<b>Location:</b> http://example.com/about.html#contacts<br/>
+						<b>Date:</b> Thu, 19 Feb 2009 11:08:01 GMT<br/>
+						<b>Server:</b> Apache/2.2.4<br/>
+						<b>Content-Type:</b> text/html; charset=windows-1251<br/>
+						<b>Content-Length:</b> 110<br/>
+						<i style="font-size: 0.6em">(пустая строка)</i><br/>
+						&lthtml&gt&ltbody&gt&lta href="http://example.com/about.html#contacts"&gtClick here&lt/a&gt&lt/body&gt&lt/html&gt
 
-					<section>
-						Тело сообщения (англ. Message Body) — непосредственно данные сообщения. Обязательно должно отделяться от заголовков пустой строкой.
 					</section>
 				</section>
-			<!-- 5 slide-->
-				<section>SLide 4</section>
-				<section>SLide 5</section>
-				<section>SLide 6</section>	
+			<!-- 5 slide Methods-->
+				<section style="text-align:left;font-size: 0.8em">
+					<h3 style="text-align:center">Методы</h3>
+					<section>						
+						Метод HTTP (англ. HTTP Method) — последовательность из любых символов, кроме управляющих и разделителей, указывающая на основную операцию над ресурсом.
+					</section>
+					<!-- Here the main list of HTTP Methods -->
+					<section>
+						Список методов в HTTP: <br><br>
+						<ul>
+							<li>OPTIONS</li>
+							<li>GET</li>
+							<li>HEAD</li>
+							<li>POST</li>
+							<li>PUT</li>
+							<li>DELETE</li>
+							<li>TRACE</li>
+							<li>CONNECT</li>
+							<li>PATCH</li>
+						</ul>
+					</section>
+					<!-- OPTIONS-->
+					<section>
+						<b>OPTIONS</b> <br><br>
+						Используется для определения возможностей веб-сервера или параметров соединения для конкретного ресурса. <br><br>
+						<i> OPTIONS * HTTP/1.1 </i>
+					</section>
+					<!-- GET-->
+					<section>
+						<b>GET</b> <br><br>
+						Используется для запроса содержимого указанного ресурса. С помощью метода GET можно также начать какой-либо процесс.<br>
+						Клиент может передавать параметры выполнения запроса в URI целевого ресурса после символа «?».<br>
+						Согласно стандарту HTTP, запросы типа GET считаются идемпотентными.
+						<br>
+						<br>
+
+						<i>GET /path/resource?param1=value1&#38;param2=value2 HTTP/1.1</i>
+					</section>
+					<!-- HEAD-->
+					<section>
+						<b>HEAD</b> <br><br>
+						Аналогичен методу GET, за исключением того, что в ответе сервера отсутствует тело. Запрос HEAD обычно применяется для извлечения метаданных, проверки наличия ресурса (валидация URL) и чтобы узнать, не изменился ли он с момента последнего обращения.
+					</section>
+					<!-- POST-->
+					<section>
+						<b>POST</b> <br><br>
+						Метод запроса POST предназначен для запроса, при котором веб-сервер принимает данные, заключенные в тело сообщения, для хранения. Он часто используется для загрузки файла или представления заполненной веб-формы. <br>
+						В отличие от метода GET, метод POST не считается идемпотентным.
+					</section>
+					<!-- PUT-->
+					<section>
+						<b>PUT</b> <br><br>
+						Применяется для загрузки содержимого запроса на указанный в запросе URI. Если по заданному URI не существует ресурс, то сервер создаёт его и возвращает статус 201 (Created). Если же был изменён ресурс, то сервер возвращает 200 (Ok) или 204 (No Content). <br>
+						Фундаментальное различие методов POST и PUT заключается в том что метод PUT применяется для обновления информации на сервере, и требует, чтобы содержимое запроса HTTP PUT сохранялось на сервере.
+					</section>
+					<!-- PATCH-->
+					<section>
+						<b>PATCH</b><br> <br>
+						Метод, который не объявляется ни безопасным, ни идемпотентным, и позволяет производить полное или частичное обновление.
+						<!-- https://habrahabr.ru/sandbox/41580/ -->
+					</section>
+					<!-- DELETE-->
+					<section>
+						<b>DELETE</b><br><br>
+						Удаляет указанный ресурс.
+					</section>
+					<!-- TRACE-->
+					<section>
+						<b>TRACE</b><br><br>
+						Метод позволяет клиенту видеть, что получается на другом конце цепочки запросов и использовать эти данные для тестирования или диагностической информации.
+					</section>
+					<!-- CONNECT-->
+					<section>
+						<b>CONNECT</b><br><br>
+						Преобразует соединение запроса в прозрачный TCP/IP-туннель, обычно чтобы содействовать установлению защищённого SSL-соединения через нешифрованный прокси.
+					</section>
+					
+				</section>
+			<!-- 6 slide Condition codes-->	
+				<section style="text-align:left;font-size: 0.8em">
+					<h3 style="text-align:center">Коды состояния</h3>
+					<section>
+						Код состояния является частью первой строки ответа сервера. Он представляет собой целое число из трёх цифр. Первая цифра указывает на класс состояния. <br><br>
+						<ul>
+							<i><li>201 Webpage Created</li></i>
+							<i><li>403 Access allowed only for registered users</li></i>
+							<i><li>507 Insufficient Storage</li></i>
+						</ul>
+					</section>	
+					<section>
+						<ul>
+							<li> 1xx  - Информационный (англ. informational)</li><br>
+							<li> 2xx - Успех (англ. Success)</li><br>
+							<li> 3xx - Перенаправление (англ. Redirection)</li><br>
+							<li> 4xx - Ошибка клиента (англ. Client Error) </li><br>
+							<li> 5xx - Ошибка сервера (англ. Server Error)	</li><br>
+						</ul>
+					</section>
+				</section>
+			<!-- 7 slide Headers-->
+				<section style="text-align:left;font-size: 0.8em">
+					<h3 style="text-align:center">Заголовки</h3>
+					<section>
+						 Заголовки HTTP (англ. HTTP Headers) — это строки в HTTP-сообщении, содержащие разделённую двоеточием пару параметр-значение. Заголовки должны отделяться от тела сообщения хотя бы одной пустой строкой. 
+						 <br>
+					</section>
+					<section>
+						Все заголовки разделяются на четыре основных группы: <br><br>	
+						<ol>	
+   							<li>&nbspGeneral Headers («Основные заголовки») — могут включаться в любое сообщение клиента и сервера;</li>
+   							<li>&nbspRequest Headers («Заголовки запроса») — используются только в запросах клиента;</li>
+   							<li>&nbspResponse Headers («Заголовки ответа») — только для ответов от сервера;</li>
+   							<li>&nbspEntity Headers («Заголовки сущности») — сопровождают каждую сущность сообщения.</li>
+						</ol>
+					</section>
+					<section>
+						Если не хватает существующих, то можно вводить свои. Традиционно к именам таких дополнительных заголовков добавляют префикс «X-» для избежания конфликта имён с возможно существующими.
+					</section>
+				</section>
+				<section></section>
 			</div>
 		</div>
 
