@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+			<!-- 1 slide-->
+				<section style="font-size: 3em"><b>HTTP</b></section>
+			<!-- 2 slide-->
+				<section>
+					<p style="text-align: left; text-indent: 2em;">
+						<b>HTTP</b> (англ. HyperText Transfer Protocol — «протокол передачи гипертекста») — протокол прикладного уровня передачи данных. Основой HTTP является технология «клиент-сервер», то есть предполагается существование:
+						<ul style="margin-left: 2.5em;">
+							<li>Потребителей (клиентов), которые инициируют соединение и посылают запрос;</li>
+
+						    <li> Поставщиков (серверов), которые ожидают соединения для получения запроса, производят необходимые действия и возвращают обратно сообщение с результатом.</li>
+						</ul>
+					</p>  	
+				</section>
+			<!-- 3 slide-->	
+				<section>
+					<ul>
+						<h3>
+							Версии HTTP
+						</h3>
+						
+						<ul>
+							<li><h4>HTTP/0.9</h4></li>
+							<li><h4>HTTP/1.0</h4></li>
+							<li><h4>HTTP/1.1</h4></li>
+							<li><h4>HTTP/2  </h4></li>
+						</ul>
+					</ul>
+				</section>
+			<!-- 4 slide-->	
+				<section>
+					<h3>Структура HTTP</h3>
+					<section>
+						<b>Каждое HTTP-сообщение состоит из трёх частей, которые передаются в указанном порядке.</b>
+						<br/>
+						<br/>
+						<ul>
+							<li>Стартовая строка</li>
+							<li>Заголовки		</li>
+							<li>Тело сообщения	</li>
+						</ul>
+					</section>
+					<section style="text-align: left">
+						<p style="text-indent: 2em;"> <b>Стартовая строка</b> (англ. Starting line) — определяет тип сообщения;</p>
+						<p>Cтартовые строки различаются для запроса и ответа:
+							<ul>
+								<li>
+									запрос: <i style="font-size: 0.8em">
+												метод URI HTTP/Версия
+											</i>
+											<br/>
+											[ GET /wiki/HTTP HTTP/1.0 ]
+								</li>
+								<li>
+									ответ: <i style="font-size: 0.8em">
+												HTTP/Версия КодСостояния Пояснение
+											</i>
+											<br/>
+											[ HTTP/1.0 200 OK ]
+								</li>
+							</ul>
+						</p>
+					</section>
+					<section style="text-align: left; text-indent: 2em;">
+						<p>
+							<b>Заголовки</b> (англ. Headers) — характеризуют тело сообщения, параметры передачи и прочие сведения.
+						</p>
+						<p>
+							Формат заголовков - это строки в HTTP-сообщении, содержащие разделённую двоеточием пару параметр-значение.
+						</p>
+						<i>
+							<p><b>Server: </b> Apache/2.2.11 (Win32) PHP/5.3.0  <br/></p>
+							<p><b>Last-Modified:</b> Sat, 16 Jan 2010 21:16:42 GMT <br/></p>
+							<p><b>Content-Type:</b> text/plain; charset=windows-1251 <br/></p>
+							<p><b>Content-Language:</b> ru <br/>	</p>
+						</i>	
+					</section>
+
+					<section>
+						Тело сообщения (англ. Message Body) — непосредственно данные сообщения. Обязательно должно отделяться от заголовков пустой строкой.
+					</section>
+				</section>
+			<!-- 5 slide-->
+				<section>SLide 4</section>
+				<section>SLide 5</section>
+				<section>SLide 6</section>	
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
